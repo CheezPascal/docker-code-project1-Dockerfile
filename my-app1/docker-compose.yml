@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8099:80" # Map host port 8099 to container port 80
+    volumes:
+      - ./http_files:/usr/share/nginx/html:ro # Mount local directory for static files
+
